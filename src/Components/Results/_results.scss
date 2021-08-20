@@ -1,0 +1,36 @@
+.result {
+  margin-top: 1.5 * $fontSize + 5 * $fontSize + $selectorSize * 1.5 / 2;
+  color: #ffffff;
+  text-align: center;
+  @media (max-width: $md2) {
+    display: inline-block;
+    margin-top: 30px;
+  }
+
+  //result__wrapper
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  //result__title
+  &__title {
+    font-size: 4rem;
+  }
+
+  //result__button
+  &__button {
+    background: #ffffff;
+    margin-top: 1.5rem;
+    padding: 10px 0;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    color: $darkText;
+    width: 100%;
+    text-transform: uppercase;
+    transition: all 0.5s;
+    &:hover {
+      color: rgba(255, 0, 0, 0.6);
+    }
+  }
+}

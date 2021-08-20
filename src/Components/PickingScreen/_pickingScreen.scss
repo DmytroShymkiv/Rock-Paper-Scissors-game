@@ -1,0 +1,75 @@
+@mixin responsive($property, $value) {
+  @media (max-width: $md1) {
+    #{$property}: $value * 0.9;
+  }
+  @media (max-width: $md2) {
+    #{$property}: $value * 0.7;
+  }
+  @media (max-width: $md3) {
+    #{$property}: $value * 0.5;
+  }
+  @media (max-width: $md4) {
+    #{$property}: $value * 0.4;
+  }
+}
+@mixin responsive-selector($property, $value) {
+  @media (max-width: $md1) {
+    #{$property}: $value * 0.9;
+  }
+  @media (max-width: $md2) {
+    #{$property}: $value * 0.9;
+  }
+  @media (max-width: $md3) {
+    #{$property}: $value * 0.9;
+  }
+  @media (max-width: $md4) {
+    #{$property}: $value * 0.9;
+  }
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pick {
+  //pick__title
+  &__title {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 5rem;
+    margin-bottom: $selectorSize * 1.5 / 2;
+    @media (max-width: $md3) {
+      margin-top: $selectorSize / 3;
+      margin-bottom: 0;
+    }
+  }
+
+  //pick__container
+  &__container {
+    @include responsive(min-width, $selectorSize * 1.75);
+
+    .selector {
+      img {
+        @include responsive(width, $imgSize);
+      }
+
+      @include responsive(width, $selectorSize);
+      @include responsive(height, $selectorSize);
+      @include responsive(border-width, $selectorBorder);
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media (max-width: $md3) {
+      flex-direction: column-reverse;
+      margin-top: $selectorSize / 3;
+    }
+  }
+}

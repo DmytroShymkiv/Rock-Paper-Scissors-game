@@ -1,0 +1,63 @@
+@import "./_variables.scss";
+@import "./nullstyles";
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+//Components
+@import "../Components/Header/header";
+@import "../Components/Rules/rules";
+@import "../Components/Selectors/selectors";
+@import "../Components/PickingScreen/pickingScreen";
+@import "../Components/Results/results";
+
+html {
+  font-size: $fontSize;
+  @media (max-width: $md2) {
+    font-size: 12px;
+  }
+  @media (max-width: $md3) {
+    font-size: 10px;
+  }
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  background: $background;
+  position: absolute;
+}
+
+@media (max-width: $md3) {
+  .show-mobile {
+    display: block;
+  }
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: $md3) {
+  .show-mobile {
+    display: none;
+  }
+  .hide-mobile {
+    display: block;
+  }
+}
+@media (max-width: $md2) {
+  .show-tablet {
+    display: block;
+  }
+  .hide-tablet {
+    display: none;
+  }
+}
+
+@media (min-width: $md2) {
+  .show-tablet {
+    display: none;
+  }
+  .hide-tablet {
+    display: block;
+  }
+}
